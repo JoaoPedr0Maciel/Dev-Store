@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ProductsProps } from "../pages/Home";
+import { ProductsProps } from "../HomeTypes";
 
 export type CartData = {
   id: string;

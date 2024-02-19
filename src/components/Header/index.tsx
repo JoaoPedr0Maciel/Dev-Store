@@ -15,7 +15,7 @@ export const Header = () => {
         <Link className="relative" to="/cart">
           <FiShoppingCart size={24} />
           {cartAmount > 0 && (
-            <span className="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 rounded">
+            <span className="absolute -top-1.5 -right-3 font-bold text-xs w-4 h-4 bg-blue-200 flex justify-center items-center text-black px-2 py-1 rounded-full">
               {cartAmount}
             </span>
           )}

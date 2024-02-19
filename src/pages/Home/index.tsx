@@ -2,14 +2,8 @@ import { BsCartPlus } from "react-icons/bs";
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { useCart } from "../../context/CartContext";
+import { ProductsProps } from "../../types/HomeTypes";
 
-export type ProductsProps = {
-  id: string;
-  title: string;
-  price: number;
-  cover: string;
-  description: string;
-};
 export const Home = () => {
   const [products, setProducts] = useState<ProductsProps[]>([]);
 
