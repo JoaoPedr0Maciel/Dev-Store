@@ -1,8 +1,9 @@
 import { BsCartPlus } from "react-icons/bs";
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
+import { useCart } from "../../context/CartContext";
 
-type ProductsProps = {
+export type ProductsProps = {
   id: string;
   title: string;
   price: number;
@@ -19,6 +20,12 @@ export const Home = () => {
     }
     getData();
   }, []);
+
+  const { addToCart } = useCart();
+
+  function handleAddCart(product: ProductsProps) {
+    addToCart(product);
+  }
 
   return (
     <div>
@@ -37,8 +44,16 @@ export const Home = () => {
               />
               <p className="font-medium mt-1 ">{product.title}</p>
               <div className="flex gap-3 items-center">
-                <strong className="text-zinc-700/50">R$ {product.price}</strong>
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <strong className="text-zinc-700/50">
+                  {product.price.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
+                </strong>
+                <button
+                  onClick={() => handleAddCart(product)}
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
                   <BsCartPlus />
                 </button>
               </div>
