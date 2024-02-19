@@ -15,6 +15,9 @@ export type CartContextData = {
   cart: CartData[];
   cartAmount: number;
   addToCart: (myItem: ProductsProps) => void;
+  removeItemCart: (product: CartData) => void;
+  totalCart: (item: CartData[]) => void;
+  total: string;
 };
 
 export type ChildrenProps = {
