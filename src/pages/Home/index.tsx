@@ -3,6 +3,7 @@ import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { useCart } from "../../context/CartContext";
 import { ProductsProps } from "../../types/HomeTypes";
+import toast from "react-hot-toast";
 
 export const Home = () => {
   const [products, setProducts] = useState<ProductsProps[]>([]);
@@ -18,6 +19,7 @@ export const Home = () => {
   const { addToCart } = useCart();
 
   function handleAddCart(product: ProductsProps) {
+    toast.success("Produto adicionado ao carrinho");
     addToCart(product);
   }
 
