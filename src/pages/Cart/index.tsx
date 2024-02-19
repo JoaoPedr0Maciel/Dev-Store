@@ -9,7 +9,7 @@ export const Cart = () => {
       {cart.length === 0 ? (
         <div className="w-full h-full flex justify-center items-center flex-col">
           <h1 className="text-3xl font-bold text-gray-800 mt-10">
-            Não há itens no carrinho
+            Seu carrinho esta sem nenhum item
           </h1>
           <Link
             className="font-bold mt-5 bg-[#94A3B8] w-[150px] h-12 text-white flex justify-center items-center rounded-lg"
